@@ -58,11 +58,11 @@ You can use the `requests.rest` file with the **VS Code REST Client extension**.
 POST http://localhost:8000
 Content-Type: application/x-www-form-urlencoded
 
-taskname=TaskWeather&input=5
+TaskWeather&5
 ```
 ---
 ```
 POST http://localhost:8000
 Content-Type: application/x-www-form-urlencoded
 
-taskname=TaskPalindrome&input=WWTWW
+TaskPalindrome&WWTWW
