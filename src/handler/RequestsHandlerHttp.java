@@ -36,6 +36,7 @@ public class RequestsHandlerHttp implements HttpHandler {
                 //if the method is get
                 //the response is the list of tasks
                 response = TasksList.INSTANCE.list();
+                System.out.println("New get request");
                 break;
             case "POST":
                 //if it is post add the task in the post body

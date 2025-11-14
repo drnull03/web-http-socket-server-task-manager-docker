@@ -27,7 +27,7 @@ public class TaskBitcoin extends TaskImpl {
         try {
             for (int i = 0; i < times; i++) {
                 info = getRequest("https://www.bitstamp.net/api/v2/ticker/btcusd");
-                info = info.substring(info.indexOf("\"last\": \""), info.indexOf(", \"times")).trim();
+                //info = info.substring(info.indexOf("\"last\": \""), info.indexOf(", \"times")).trim();
                 values.add(info);
                 Thread.sleep(1000);
             }

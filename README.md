@@ -19,4 +19,9 @@
 
 2.Building the docker image from Dockerfile using this command
 
-    docker build -t executor-server .
+    docker build --network=host -t executor-server .  
+
+
+3. Running a container from the image
+
+    docker run --network=host --name executor-server-container -d executor-server
