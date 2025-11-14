@@ -1,5 +1,9 @@
 package task;
 
+
+
+
+//add basic skeleton to task
 public abstract class TaskImpl implements Task {
 
     protected String input;

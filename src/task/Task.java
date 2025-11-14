@@ -1,5 +1,9 @@
 package task;
 
+
+
+//dumb interface 
+
 public interface Task {
 
     String getInput();

@@ -10,6 +10,10 @@ import java.util.concurrent.Executors;
  *
  * @author www.codejava.net
  */
+
+//i prefer the http one
+
+// no educational value of going deeper no need
 public class WebServerSocket {
 
     private static ExecutorService executorService;

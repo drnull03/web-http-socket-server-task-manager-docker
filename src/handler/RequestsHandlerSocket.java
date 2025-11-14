@@ -7,6 +7,10 @@ import java.io.*;
 import java.net.Socket;
 import java.util.*;
 
+
+
+//same as http one just reading raw byte
+//and manually impl http protocol
 public class RequestsHandlerSocket implements Runnable {
 
     private Socket socket;

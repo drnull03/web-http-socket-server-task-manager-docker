@@ -12,11 +12,13 @@ public enum TaskExecutor {
     //Singleton
     INSTANCE;
 
+
+    // path to the task package
     public static final String TASKS_PACKAGE = "task.";
 
     public String run(String parameters) {
         String taskName, input = "";
-
+        //should be taskname&input 
         List<String> list = Arrays.stream(parameters.split("&")).collect(Collectors.toList());
 
         long start = System.currentTimeMillis();
@@ -26,6 +28,7 @@ public enum TaskExecutor {
             taskName = list.get(0);
             input = list.get(1);
         }
+        //create task handle no found tasks here
         Task task = createTask(taskName);
         task.setInput(input);
         task.execute();
@@ -37,15 +40,17 @@ public enum TaskExecutor {
 
         return task.getResult();
     }
-
+    //create task
     private Task createTask(String className) {
         Task task = null;
         try {
+            // tasks here should have the exact same name as defined in the task package
             task = (Task)Class.forName(TASKS_PACKAGE + className).newInstance();
         } catch (Exception e) {
             try {
                 task = (Task)Class.forName(TASKS_PACKAGE + "TaskNotFound").newInstance();
             } catch (Exception e1) {
+                // i dont think this is ever executed unless the className provided contains some malformed shit
                 e1.printStackTrace();
             }
         }

@@ -8,20 +8,40 @@ import singleton.TasksList;
 
 import java.io.*;
 
+
+//this file gives context to the server
+
+
 public class RequestsHandlerHttp implements HttpHandler {
 
     @Override
     public void handle(HttpExchange httpExchange) throws IOException {
-        Headers requestHeaders = httpExchange.getRequestHeaders();
-        String response = "";
 
+        //this function will handle all server requests
+
+
+        //this line gets the user header
+        Headers requestHeaders = httpExchange.getRequestHeaders();
+        
+        //this virable contains the response to the user
+        String response = "";
+        // this virable contains of the request method is GET or POST
+
+
+        //i wonder what happen if i use non existent request method
         String requestMethod = httpExchange.getRequestMethod();
         switch (requestMethod) {
             case "GET":
+
+                //if the method is get
+                //the response is the list of tasks
                 response = TasksList.INSTANCE.list();
                 break;
             case "POST":
+                //if it is post add the task in the post body
                 InputStream input = httpExchange.getRequestBody();
+
+                //did something with body some processing
                 StringBuilder params = new StringBuilder();
                 new BufferedReader(new InputStreamReader(input))
                     .lines()

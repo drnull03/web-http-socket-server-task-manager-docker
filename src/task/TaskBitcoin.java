@@ -19,7 +19,8 @@ public class TaskBitcoin extends TaskImpl {
             result = "Exception: " + e.getMessage();
         }
     }
-
+    //take the number of time i should ask the webserver
+    //just dumb api call
     public String getInfo(int times) {
         List<String> values = new ArrayList<>();
         String info;

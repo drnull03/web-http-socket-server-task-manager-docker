@@ -1,7 +1,7 @@
 package task;
 
 public final class TaskIncorrectParams extends TaskImpl {
-
+    //error handling task
     @Override
     public void execute() { }
 

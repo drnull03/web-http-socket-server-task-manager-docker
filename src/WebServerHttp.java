@@ -20,9 +20,20 @@ public class WebServerHttp {
         server.createContext("/", new RequestsHandlerHttp());
 
         //server.setExecutor(Executors.newFixedThreadPool(1));
+
+        //every request is handled by new thread
+        //cached thread pool is unbound thread pool (not fixed)
         server.setExecutor(Executors.newCachedThreadPool());
 
         server.start();
         System.out.println("WebServerHttp is listening on port " + PORT);
     }
 }
+
+
+
+
+
+
+
+
